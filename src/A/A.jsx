@@ -1,16 +1,19 @@
 "use client"
 
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 export const A = () => {
   const [name, setName] = useState("");
+
+  const dispatch =useDispatch();
 
   const handleChange = (e) => {
     setName(e.target.value);
   };
 
   const handleClick = () => {
-    alert(name);
+   dispatch({type:"NAME_UPDATE",name});
   };
 
   return (
